@@ -48,10 +48,10 @@ export class AlertService {
       return null;
     }
     
-    const alertType = product.currentStock === 0 ? 'OUT_OF_STOCK' : 'CRITICAL_STOCK';
+const alertType = product.currentStock === 0 ? 'OUT_OF_STOCK' : 'CRITICAL_STOCK';
     const message = product.currentStock === 0
-      ? `${product.name} is out of stock`
-      : `${product.name} has reached critical stock level: ${product.currentStock}/${product.minStock}`;
+      ? `${product.name} está agotado`
+      : `${product.name} ha alcanzado nivel de stock crítico: ${product.currentStock}/${product.minStock}`;
     
     const alertDTO: CreateAlertDTO = {
       productId,

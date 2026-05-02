@@ -6,6 +6,13 @@ export const prisma = globalForPrisma.prisma || new PrismaClient({
   log: ['error', 'warn'],
 });
 
+
+(async () => {
+  try {
+    await prisma.$executeRaw`PRAGMA foreign_keys = ON`;
+  } catch {}
+})();
+
 if (process.env.NODE_ENV !== 'production') {
   globalForPrisma.prisma = prisma;
 }

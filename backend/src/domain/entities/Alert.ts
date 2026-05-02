@@ -25,7 +25,7 @@ export function createAlertEntity(data: CreateAlertDTO): Omit<Alert, 'id' | 'cre
 
 export function generateAlertMessage(productName: string, currentStock: number, minStock: number): string {
   if (currentStock === 0) {
-    return `${productName} is out of stock`;
+    return `${productName} está agotado`;
   }
-  return `${productName} has reached critical stock level: ${currentStock}/${minStock}`;
+  return `${productName} ha alcanzado nivel de stock crítico: ${currentStock}/${minStock}`;
 }

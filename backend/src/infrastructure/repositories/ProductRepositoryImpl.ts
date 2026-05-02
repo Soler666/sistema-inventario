@@ -96,8 +96,16 @@ async findLowStock(): Promise<Product[]> {
     return mapToProduct(product);
   }
 
-  async delete(id: string): Promise<boolean> {
-    await prisma.product.delete({ where: { id } });
-    return true;
+async delete(id: string): Promise<boolean> {
+    try {
+      
+      await prisma.$executeRaw`DELETE FROM Movement WHERE productId = ${id}`;
+      await prisma.$executeRaw`DELETE FROM Alert WHERE productId = ${id}`;
+      await prisma.$executeRaw`DELETE FROM Product WHERE id = ${id}`;
+      return true;
+    } catch (error) {
+      console.error('Delete failed:', error);
+      throw error;
+    }
   }
 }

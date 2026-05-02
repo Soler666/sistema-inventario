@@ -271,7 +271,7 @@ export function VistaMovimientos() {
                     type="text"
                     value={motivo}
                     onChange={(e) => setMotivo(e.target.value)}
-                    placeholder="Reason for the movement (optional)"
+placeholder="Motivo del movimiento (opcional)"
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50"
                   />
                 </div>
