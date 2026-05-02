@@ -110,11 +110,11 @@ export function VistaMovimientos() {
   };
 
   return (
-    <div className="flex-1 p-8 bg-slate-50 overflow-auto">
+<div className="flex-1 p-4 md:p-8 bg-slate-50 overflow-auto">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-col md:flex-row items-start md:justify-between mb-6 md:mb-8 gap-4">
           <div>
-            <h2 className="text-3xl font-bold text-slate-800">Movimientos de Inventario</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-800">Movimientos de Inventario</h2>
             <p className="text-slate-500 mt-1">Registra entradas y salidas de productos</p>
             {isConnected && (
               <span className="inline-block mt-2 px-2 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full font-semibold">
@@ -122,20 +122,20 @@ export function VistaMovimientos() {
               </span>
             )}
           </div>
-          <div className="flex gap-3">
+          <div className="flex flex-wrap gap-3">
             <button
               onClick={cargarDatos}
               className="flex items-center gap-2 px-4 py-3 bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl transition-all"
             >
               <RefreshCw size={18} />
-              Actualizar
+              <span className="hidden sm:inline">Actualizar</span>
             </button>
             <button
               onClick={() => setMostrarModal(true)}
               className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all shadow-lg shadow-blue-600/25"
             >
               <span className="text-xl">+</span>
-              Nuevo Movimiento
+              <span className="hidden md:inline">Nuevo Movimiento</span>
             </button>
           </div>
         </div>

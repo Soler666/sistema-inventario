@@ -100,12 +100,12 @@ export function VistaReportes() {
     );
   }
 
-  return (
-    <div className="flex-1 p-8 bg-slate-50 overflow-auto">
+return (
+    <div className="flex-1 p-4 md:p-8 bg-slate-50 overflow-auto">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-col md:flex-row items-start md:justify-between mb-6 md:mb-8 gap-4">
           <div>
-            <h2 className="text-3xl font-bold text-slate-800">Reportes y Estadísticas</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-800">Reportes y Estadísticas</h2>
             <p className="text-slate-500 mt-1">Análisis completo de tu inventario</p>
             {isConnected && (
               <span className="inline-block mt-2 px-2 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full font-semibold">
@@ -113,25 +113,25 @@ export function VistaReportes() {
               </span>
             )}
           </div>
-          <div className="flex gap-3">
+          <div className="flex flex-wrap gap-3">
             <button
               onClick={cargarDatos}
               className="flex items-center gap-2 px-4 py-3 bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl transition-all"
             >
               <RefreshCw size={18} />
-              Actualizar
+              <span className="hidden sm:inline">Actualizar</span>
             </button>
             <button
               onClick={handleDescargarPDF}
               className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all shadow-lg shadow-blue-600/25"
             >
               <Download size={18} />
-              Descargar PDF
+              <span className="hidden md:inline">Descargar PDF</span>
             </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 md:mb-8">
           <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-lg shadow-blue-500/25 p-6 text-white">
             <p className="text-4xl font-bold">{productos.length}</p>
             <p className="text-blue-100">Total Productos</p>

@@ -90,12 +90,12 @@ export function VistaAlertas() {
     });
   };
 
-  return (
-    <div className="flex-1 p-8 bg-slate-50 overflow-auto">
+return (
+    <div className="flex-1 p-4 md:p-8 bg-slate-50 overflow-auto">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-col md:flex-row items-start md:justify-between mb-6 md:mb-8 gap-4">
           <div>
-            <h2 className="text-3xl font-bold text-slate-800">Centro de Alertas</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-800">Centro de Alertas</h2>
             <p className="text-slate-500 mt-1">Monitorea el estado de tu inventario</p>
             {isConnected && (
               <span className="inline-block mt-2 px-2 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full font-semibold">
@@ -108,11 +108,11 @@ export function VistaAlertas() {
             className="flex items-center gap-2 px-4 py-3 bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl transition-all"
           >
             <RefreshCw size={18} />
-            Actualizar
+            <span className="hidden sm:inline">Actualizar</span>
           </button>
         </div>
 
-        <div className="grid grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 md:mb-8">
           <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
             <div className="flex items-center gap-4">
 <div className="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center">
@@ -212,8 +212,8 @@ export function VistaAlertas() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2 mb-1">
-                        <h4 className="font-bold text-slate-800">
-                          {alerta.producto?.name || 'Producto'}
+<h4 className="font-bold text-slate-800">
+                          {alerta.product?.name || 'Producto'}
                         </h4>
                         <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${
                           alerta.resolved 

@@ -18,8 +18,8 @@ export interface Movimiento {
   quantity: number;
   reason: string | null;
   createdAt: string;
-  producto?: {
-    nombre: string;
+  product?: {
+    name: string;
     sku: string;
   };
 }
@@ -32,8 +32,8 @@ export interface Alerta {
   resolved: boolean;
   createdAt: string;
   resolvedAt: string | null;
-  producto?: {
-    nombre: string;
+  product?: {
+    name: string;
     sku: string;
   };
 }

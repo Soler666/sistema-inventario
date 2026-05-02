@@ -20,11 +20,11 @@ export function VistaConfiguracion() {
     }, 1000);
   };
 
-  return (
-    <div className="flex-1 p-8 bg-slate-50 overflow-auto">
+return (
+    <div className="flex-1 p-4 md:p-8 bg-slate-50 overflow-auto">
       <div className="max-w-3xl mx-auto">
-        <div className="mb-8">
-          <h2 className="text-3xl font-bold text-slate-800">Configuración</h2>
+        <div className="mb-6 md:mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-800">Configuración</h2>
           <p className="text-slate-500 mt-1">Personaliza el sistema a tu medida</p>
         </div>
 
@@ -98,7 +98,7 @@ export function VistaConfiguracion() {
 
           <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
             <h3 className="text-lg font-bold text-slate-800 mb-4">Umbrales de Alerta</h3>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-2">Stock Crítico</label>
                 <div className="flex items-center gap-2">
